@@ -37,8 +37,8 @@ do
     PILON=$ASM/${ID}.pilon.fasta
     SORTED=$ASM/${ID}.sorted.fasta
     STATS=$ASM/${ID}.sorted.stats.txt
-    LEFTIN=$FASTQ/${BASE}_R1.fastq.gz
-    RIGHTIN=$FASTQ/${BASE}_R2.fastq.gz
+    LEFTIN=$FASTQ/${BASE}_1.fastq.gz
+    RIGHTIN=$FASTQ/${BASE}_2.fastq.gz
     echo "BASE is $BASE"
     if [ ! -f $LEFTIN ]; then
      echo "no $LEFTIN file for $ID/$BASE in $FASTQ dir"
