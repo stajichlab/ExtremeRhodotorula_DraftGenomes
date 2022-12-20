@@ -17,26 +17,27 @@ fi
 
 module load AAFTF
 module load fastp
-
+module load workspace/scratch
+MITOREF=lib/MT_Genome_ref.fa
 FASTQ=input
 SAMPLEFILE=samples.csv
 ASM=asm/mito
-WORKDIR=working_AAFTF
-PHYLUM=Mucoromycota
+WORKDIR=$SCRATCH
+PHYLUM=Basidiomycota
 mkdir -p $ASM $WORKDIR
 if [ -z $CPU ]; then
     CPU=1
 fi
 IFS=, # set the delimiter to be ,
-tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SPECIES STRAIN LOCUSTAG TYPESTRAIN
+tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE
 do
     ASMFILE=$ASM/${ID}.mitochondria.fasta
     CLEANDUP=$ASM/${ID}.rmdup.fasta
     PILON=$ASM/${ID}.pilon.fasta
     SORTED=$ASM/${ID}.sorted.fasta
     STATS=$ASM/${ID}.sorted.stats.txt
-    LEFTIN=$FASTQ/${BASE}_R1.fastq.gz
-    RIGHTIN=$FASTQ/${BASE}_R2.fastq.gz
+    LEFTIN=$FASTQ/${BASE}_1.fastq.gz
+    RIGHTIN=$FASTQ/${BASE}_2.fastq.gz
 
     if [ ! -f $LEFTIN ]; then
      echo "no $LEFTIN file for $ID/$BASE in $FASTQ dir"
@@ -44,8 +45,9 @@ do
     fi
     LEFTTRIM=$WORKDIR/${BASE}_mito_1P.fastq.gz
     RIGHTTRIM=$WORKDIR/${BASE}_mito_2P.fastq.gz
-
-    echo "$BASE $ID $STRAIN"
+    LEFT=$WORKDIR/${BASE}_mito_filtered_1.fastq.gz
+    RIGHT=$WORKDIR/${BASE}_mito_filtered_2.fastq.gz
+    echo "$BASE $ID $STRAIN $LEFTIN $RIGHTIN"
     if [ ! -f $ASMFILE ]; then # can skip we already have made an assembly
 	if [ ! -f $LEFT ]; then
 	    if [ ! -f $LEFTTRIM ]; then
@@ -65,7 +67,7 @@ do
 	fi
 	
 	AAFTF mito -c $CPU --left $LEFT --right $RIGHT --memory $MEM \
-	      -o $ASMFILE -w $WORKDIR/mito_${ID}
+	      -o $ASMFILE -w $WORKDIR/mito_${ID} --reference $MITOREF
 	
 	if [ ! -f $ASMFILE ]; then
 	    echo "mito must have failed, exiting"
