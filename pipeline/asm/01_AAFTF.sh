@@ -17,10 +17,10 @@ fi
 
 module load AAFTF
 module load fastp
-
 FASTQ=input
 SAMPLEFILE=samples.csv
 ASM=asm/AAFTF
+WORKDIR=$SCRATCH
 WORKDIR=working_AAFTF
 PHYLUM=Basidiomycota
 mkdir -p $ASM $WORKDIR
