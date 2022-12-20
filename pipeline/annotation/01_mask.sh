@@ -1,5 +1,5 @@
 #!/bin/bash -l
-#SBATCH -p short --ntasks 48 --nodes 1 --mem 48G --out logs/annotate_mask.%a.log
+#SBATCH -p short -c 48 -n 1 --nodes 1 --mem 48G --out logs/annotate_mask.%a.log
 
 module unload miniconda3
 
@@ -29,13 +29,14 @@ if [ $N -gt $MAX ]; then
     exit
 fi
 
+#tail -n +2 $SAMPLES | sed -n ${N}p | while read ID BASE SPECIES STRAIN LOCUSTAG TYPESTRAIN
 IFS=,
-tail -n +2 $SAMPLES | sed -n ${N}p | while read ID BASE SPECIES STRAIN LOCUSTAG TYPESTRAIN
+tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE
 do
-    name=$BASE
+    name=$ID
     SPECIESNOSPACE=$(echo -n "$SPECIES $STRAIN" | perl -p -e 's/[\(\)\s]+/_/g')
 
-    for type in AAFTF shovill
+    for type in AAFTF 
     do
 	name=$ID.$type
 	if [ ! -f $INDIR/${name}.fasta ]; then
