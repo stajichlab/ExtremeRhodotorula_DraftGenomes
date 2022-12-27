@@ -78,7 +78,7 @@ do
     fi
     
     if [ ! -f $PILON ]; then
-    	AAFTF pilon -i $CLEANDUP -o $PILON -c $CPU --left $LEFT  --right $RIGHT --mem $MEM
+    	AAFTF pilon -i $CLEANDUP -o $PILON -c $CPU --left $LEFTIN --right $RIGHTIN --mem $MEM
     fi
     
     if [ ! -f $PILON ]; then

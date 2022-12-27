@@ -25,17 +25,18 @@ if [ -z $N ]; then
 fi
 GENOMEFOLDER=genomes
 EXT=fasta
-LINEAGE=mucoromycota_odb10
+LINEAGE=basidiomycota_odb10
 OUTFOLDER=BUSCO
 SAMPLEFILE=samples.csv
-SEED_SPECIES=rhizopus_oryzae
-SAMPLES=samples.csv
+SEED_SPECIES=rhodotorula_graminis_nrrl_y-2474
 mkdir -p $OUTFOLDER
 
 IFS=, # set the delimiter to be ,
-tail -n +2 $SAMPLES | sed -n ${N}p | while read ID BASE SPECIES STRAIN LOCUSTAG TYPESTRAIN
+IFS=, # set the delimiter to be ,
+tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE
 do
-    for type in AAFTF shovill
+    ID=$STRAIN
+    for type in AAFTF
     do
 	GENOMEFILE=$GENOMEFOLDER/$ID.$type.$EXT
 	if [ -f $GENOMEFILE ]; then
