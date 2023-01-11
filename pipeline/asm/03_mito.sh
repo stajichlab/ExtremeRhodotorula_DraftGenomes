@@ -40,8 +40,13 @@ do
     RIGHTIN=$FASTQ/${BASE}_2.fastq.gz
 
     if [ ! -f $LEFTIN ]; then
-     echo "no $LEFTIN file for $ID/$BASE in $FASTQ dir"
-     exit
+	    BASE=$(echo -n $BASE | perl -p -e 's/_R\S+//')
+	    LEFTIN=$FASTQ/${BASE}_R1_001.fastq.gz
+	    RIGHTIN=$FASTQ/${BASE}_R2_001.fastq.gz
+	    if [ ! -f $LEFTIN ]; then
+     		echo "no $LEFTIN file for $ID/$BASE in $FASTQ dir"
+     		exit
+	    fi
     fi
     LEFTTRIM=$WORKDIR/${BASE}_mito_1P.fastq.gz
     RIGHTTRIM=$WORKDIR/${BASE}_mito_2P.fastq.gz

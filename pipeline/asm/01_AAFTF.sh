@@ -37,19 +37,26 @@ do
     PILON=$ASM/${ID}.pilon.fasta
     SORTED=$ASM/${ID}.sorted.fasta
     STATS=$ASM/${ID}.sorted.stats.txt
+    
     LEFTIN=$FASTQ/${BASE}_1.fastq.gz
     RIGHTIN=$FASTQ/${BASE}_2.fastq.gz
-    echo "BASE is $BASE"
     if [ ! -f $LEFTIN ]; then
-     echo "no $LEFTIN file for $ID/$BASE in $FASTQ dir"
-     exit
+	    BASE=$(echo -n $BASE | perl -p -e 's/_R\S+//')
+	    LEFTIN=$FASTQ/${BASE}_R1_001.fastq.gz
+	    RIGHTIN=$FASTQ/${BASE}_R2_001.fastq.gz
+	    if [ ! -f $LEFTIN ]; then
+     		echo "no $LEFTIN file for $ID/$BASE in $FASTQ dir"
+     		exit
+	    fi
     fi
+    echo "BASE is $BASE; LEFTIN is $LEFTIN"
     LEFTTRIM=$WORKDIR/${BASE}_1P.fastq.gz
     RIGHTTRIM=$WORKDIR/${BASE}_2P.fastq.gz
     MERGETRIM=$WORKDIR/${BASE}_fastp_MG.fastq.gz
     LEFT=$WORKDIR/${BASE}_filtered_1.fastq.gz
     RIGHT=$WORKDIR/${BASE}_filtered_2.fastq.gz
     MERGED=$WORKDIR/${BASE}_filtered_U.fastq.gz
+    echo "$LEFTIN $RIGHTIN $LEFTTRIM $RIGHTTRIM"
 
     echo "$BASE $ID $STRAIN"
     if [ ! -f $ASMFILE ]; then # can skip we already have made an assembly
