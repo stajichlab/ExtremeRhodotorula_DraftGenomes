@@ -1,5 +1,5 @@
 #!/usr/bin/bash -l
-#SBATCH -p short -N 1 -n 24 --mem 64gb --out logs/genomescope.%a.log -a 1-90
+#SBATCH -p short -N 1 -n 24 --mem 64gb --out logs/genomescope.%a.log -a 1-186
 
 module load workspace/scratch
 module load samtools
@@ -34,8 +34,14 @@ KMER=21
 READLEN=150 # note this assumes all projects are 150bp reads which they may not be
 tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE
 do
-    # for this project has only a single file base  but this needs fixing otherse
-    jellyfish count -C -m $KMER -s $JELLYFISHSIZE -t $CPU -o $SCRATCH/$STRAIN.jf <(pigz -dc $FASTQFOLDER/${BASE}_[12].fastq.gz)
-    jellyfish histo -t $CPU $SCRATCH/$STRAIN.jf > $GENOMESCOPE/$STRAIN.histo
-    Rscript scripts/genomescope.R $GENOMESCOPE/$STRAIN.histo $KMER $READLEN $GENOMESCOPE/$STRAIN/
+    # for this project two different file base but this needs fixing otherse)
+    if [ ! -f $GENOMESCOPE/$STRAIN.histo ]; then
+	if [ ! -f $FASTQFOLDER/${BASE}_1.fastq.gz ]; then
+		jellyfish count -C -m $KMER -s $JELLYFISHSIZE -t $CPU -o $SCRATCH/$STRAIN.jf <(pigz -dc $FASTQFOLDER/${BASE})
+	else
+    		jellyfish count -C -m $KMER -s $JELLYFISHSIZE -t $CPU -o $SCRATCH/$STRAIN.jf <(pigz -dc $FASTQFOLDER/${BASE}_[12].fastq.gz)
+	fi
+    	jellyfish histo -t $CPU $SCRATCH/$STRAIN.jf > $GENOMESCOPE/$STRAIN.histo
+    	Rscript scripts/genomescope.R $GENOMESCOPE/$STRAIN.histo $KMER $READLEN $GENOMESCOPE/$STRAIN/
+    fi
 done
