@@ -1,2 +1,2 @@
-# ExtremeRhodotorula_DraftGenomes
+# ExtremeRhodotorula DraftGenomes
 Draft genomes from short read data
