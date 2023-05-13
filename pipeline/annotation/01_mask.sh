@@ -1,5 +1,5 @@
 #!/bin/bash -l
-#SBATCH -p short -c 48 -n 1 --nodes 1 --mem 48G --out logs/annotate_mask.%a.log
+#SBATCH -p short -c 8 -n 1 --nodes 1 --mem 48G --out logs/annotate_mask.%a.log
 
 module unload miniconda3
 
@@ -9,13 +9,14 @@ if [ $SLURM_CPUS_ON_NODE ]; then
 fi
 
 INDIR=genomes
+OUTDIR=genomes_to_annotate
 MASKDIR=RepeatMasker_run
 SAMPLES=samples.csv
 RMLIBFOLDER=lib/repeat_library
-mkdir -p $RMLIBFOLDER
+mkdir -p $RMLIBFOLDER $MASKDIR $OUTDIR
 RMLIBFOLDER=$(realpath $RMLIBFOLDER)
-N=${SLURM_ARRAY_TASK_ID}
 
+N=${SLURM_ARRAY_TASK_ID}
 if [ -z $N ]; then
     N=$1
     if [ -z $N ]; then
@@ -29,11 +30,13 @@ if [ $N -gt $MAX ]; then
     exit
 fi
 
-#tail -n +2 $SAMPLES | sed -n ${N}p | while read ID BASE SPECIES STRAIN LOCUSTAG TYPESTRAIN
 IFS=,
-tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE
+tail -n +2 $SAMPLES | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
 do
-    name=$ID
+    if [[ "$NOTES" == "Too Low" ]]; then
+	echo "skipping $N ($ID) as it is too low coverage ($NOTES)"
+	continue
+    fi
     SPECIESNOSPACE=$(echo -n "$SPECIES $STRAIN" | perl -p -e 's/[\(\)\s]+/_/g')
 
     for type in AAFTF 
@@ -43,7 +46,8 @@ do
 		echo "Cannot find $name.fasta in $INDIR - may not have been run yet"
 		exit
 	fi
-	if [ ! -s $INDIR/${name}.masked.fasta ]; then
+	OUTNAME=$OUTDIR/${SPECIESNOSPACE}.${type}.masked.fasta
+	if [ ! -s $OUTNAME ]; then
 	    mkdir -p $MASKDIR/${name}
 	    GENOME=$(realpath $INDIR/${name}.fasta)
 	    if [ ! -f $MASKDIR/${name}/${name}.fasta.masked ]; then
@@ -62,7 +66,7 @@ do
 	    		RepeatMasker -e ncbi -xsmall -s -pa $CPU -lib $LIBRARY -dir $MASKDIR/${name} -gff $INDIR/${name}.fasta
 		fi
 	    fi
-	    rsync -a $MASKDIR/${name}/${name}.fasta.masked $INDIR/${name}.masked.fasta
+	    rsync -a $MASKDIR/${name}/${name}.fasta.masked $OUTNAME
 	else
 	    echo "Skipping ${name} as masked file already exists"
 	fi

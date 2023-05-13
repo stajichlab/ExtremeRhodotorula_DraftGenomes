@@ -12,8 +12,8 @@ if [ $SLURM_CPUS_ON_NODE ]; then
     CPU=$SLURM_CPUS_ON_NODE
 fi
 
-BUSCO=eurotiomycetes_odb10 # This could be changed to the core BUSCO set you want to use
-INDIR=genomes
+BUSCO=basidiomycota_odb10 # This could be changed to the core BUSCO set you want to use
+INDIR=genomes_to_annotate
 OUTDIR=annotation
 mkdir -p $OUTDIR
 SAMPFILE=samples.csv

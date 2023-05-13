@@ -20,17 +20,29 @@ SAMPLEFILE=samples.csv
 
 ASM=genomes
 OUTDIR=$(realpath mapping_report)
-SAMPLES=samples.csv
 mkdir -p $OUTDIR
 
 IFS=, # set the delimiter to be ,
-IFS=, # set the delimiter to be ,
-tail -n +2 $SAMPLES | sed -n ${N}p | while read ID BASE SPECIES STRAIN LOCUSTAG TYPESTRAIN
+tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
 do
+    if [[ "$NOTES" == "Too Low" ]]; then
+	echo "skipping $N ($ID) as it is too low coverage ($NOTES)"
+	
+   fi
     
-    LEFT=$(realpath $INDIR/${BASE}_R1.fastq.gz)
-    RIGHT=$(realpath $INDIR/${BASE}_R2.fastq.gz)
-    
+    LEFTIN=$INDIR/${BASE}_1.fastq.gz
+    RIGHTIN=$INDIR/${BASE}_2.fastq.gz
+    if [ ! -f $LEFTIN ]; then
+	    BASE=$(echo -n $BASE | perl -p -e 's/_R\S+//')
+	    LEFTIN=$INDIR/${BASE}_R1_001.fastq.gz
+	    RIGHTIN=$INDIR/${BASE}_R2_001.fastq.gz
+	    if [ ! -f $LEFTIN ]; then
+     		echo "no $LEFTIN file for $ID/$BASE in $FASTQ dir"
+     		exit
+	    fi
+    fi
+    LEFT=$(realpath $LEFTIN)
+    RIGHT=$(realpath $RIGHTIN)
     echo "$LEFT $RIGHT"
     for type in AAFTF
     do
@@ -45,3 +57,4 @@ do
 	fi
     done
 done
+

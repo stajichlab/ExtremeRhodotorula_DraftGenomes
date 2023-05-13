@@ -10,7 +10,7 @@ if [ $SLURM_CPUS_ON_NODE ]; then
     CPU=$SLURM_CPUS_ON_NODE
 fi
 
-INDIR=genomes
+INDIR=genomes_to_annotate
 ODIR=annotation
 SAMPLES=samples.csv
 RNAFOLDER=lib/RNASeq
@@ -32,24 +32,21 @@ fi
 export PASAHOME=$HOME/.pasa
 echo $PASAHOME
 IFS=,
-SPECIES="Aspergillus fumigatus"
-sed -n ${N}p $SAMPLES | while read STRAIN NANOPORE ILLUMINA LOCUS
+tail -n +2 $SAMPLES | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
 do
-    name=$BASE
-    # previous we were running flye and canu
-    for type in canu
-    do
-  	   name=$STRAIN.$type
-	     MASKED=$INDIR/${name}.pilon.masked.fasta
-	     echo "in is $MASKED ($INDIR/${name}.pilon.masked.fasta)"
-	     if [ ! -f $MASKED ]; then
-		       echo "no masked file $MASKED"
-		       exit
-	     fi
-	     funannotate train -i $MASKED -o $ODIR/${name} \
-   	   --jaccard_clip --species "$SPECIES" --isolate $STRAIN \
-  	   --cpus $CPU --memory ${MEM} \
-  	   --single $RNAFOLDER/$STRAIN.fastq.gz \
-  	   --pasa_db mysql
-    done
+    name=$ID.$type
+    SPECIESNOSPACE=$(echo -n "$SPECIES $STRAIN" | perl -p -e 's/[\(\)\s]+/_/g')
+    # previous we were running flye and canu    
+    name=$STRAIN.$type
+    MASKED=$INDIR/${SPECIESNOSPACE}.AAFTF.masked.fasta
+    echo "in is $MASKED ($INDIR/${name}."
+    if [ ! -f $MASKED ]; then
+	echo "no masked file $MASKED"
+	exit
+    fi
+    echo funannotate train -i $MASKED -o $ODIR/${name} \
+   		--jaccard_clip --species "$SPECIES" --isolate $STRAIN \
+  		--cpus $CPU --memory ${MEM} \
+  		--single $RNAFOLDER/$STRAIN.fastq.gz \
+  		--pasa_db mysql
 done

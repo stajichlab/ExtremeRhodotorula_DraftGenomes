@@ -88,7 +88,8 @@ F6_4S_B_2A,SRR14342117,SRR14342117,Rhodotorula mucilaginosa,F6_4S_B_2A,,PRJNA723
 rhodo3571,SRR15041099,SRR15041099,Rhodotorula mucilaginosa,rhodo3571,,PRJNA743597,SAMN20056676,
 JGTA-S1,SRR5821556;SRR5851903,SRR5821556;SRR5851903,Rhodotorula mucilaginosa,JGTA-S1,,PRJNA393004,SAMN07313544,
 RIT389,SRR5860569,SRR5860569,Rhodotorula mucilaginosa,RIT389,,PRJNA390458,SAMN07235707,
-CCFEE_5069,ISQ0033047_S13_R[12]_001.fastq.gz,,Rhodotorula mucilaginosa,CCFEE_5069,,PRJNA342238,SAMN06285187,
+CCFEE_5069,ISQ0033047_S13_R[12]_001.fastq.gz,,Rhodotorula mucilaginosa,CCFEE_5069,,,,Too Low
+CCFEE_5036,SRR5223778,SRR5223778,Rhodotorula sp.,CCFEE_5036,,PRJNA342238,SAMN06285187,
 110C-1,ISQ0044495_S241_R[12]_001.fastq.gz,,Rhodotorula mucilaginosa,TFCN_110C-1,,,,
 118C-2,ISQ0044496_S277_R[12]_001.fastq.gz,,Rhodotorula mucilaginosa,TFCN_118C-2,,,,
 152A-1,ISQ0044618_S283_R[12]_001.fastq.gz,,Rhodotorula toruloides,TFCN_152A-1,,,,
@@ -186,7 +187,7 @@ Y-4378,ISQ0044647_S234_R[12]_001.fastq.gz,,Rhodotorula mucilaginosa,DBVPG_4378,,
 Y-4610,ISQ0044649_S270_R[12]_001.fastq.gz,,Rhodotorula paludigena,DBVPG_4610,,,,
 Y-7192,ISQ0044629_S52_R[12]_001.fastq.gz,,Rhodotorula sphaerocarpa,NRRL_Y-7192,,,,
 DBVPG_10075,DBVPG_10075_S1_L001_R[12]_001.fastq.gz,,Rhodotorula sp.,DBVPG_10075,,,,
-DBVPG_3045,DBVPG_3045_S2_L001_R[12]_001.fastq.gz,,Rhodotorula mucilaginosa,DBVPG_3045,,,,
+DBVPG_3045,DBVPG_3045_S2_L001_R[12]_001.fastq.gz,,Rhodotorula mucilaginosa,DBVPG_3045,,,,Too Low
 DBVPG_3090,DBVPG_3090_S3_L001_R[12]_001.fastq.gz,,Rhodotorula mucilaginosa,DBVPG_3090,,,,
 DBVPG_3235,DBVPG_3235_S4_L001_R[12]_001.fastq.gz,,Rhodotorula mucilaginosa,DBVPG_3235,,,,
 DBVPG_3236,DBVPG_3236_S5_L001_R[12]_001.fastq.gz,,Rhodotorula mucilaginosa,DBVPG_3236,,,,Too Low
