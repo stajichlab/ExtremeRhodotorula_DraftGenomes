@@ -15,8 +15,6 @@ if [ -z $N ]; then
     fi
 fi
 
-module load AAFTF
-module load fastp
 module load workspace/scratch
 MITOREF=lib/MT_Genome_ref.fa
 FASTQ=input
@@ -29,8 +27,10 @@ if [ -z $CPU ]; then
     CPU=1
 fi
 IFS=, # set the delimiter to be ,
-tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE
+tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
 do
+    module load fastp
+    module load AAFTF
     ASMFILE=$ASM/${ID}.mitochondria.fasta
     CLEANDUP=$ASM/${ID}.rmdup.fasta
     PILON=$ASM/${ID}.pilon.fasta

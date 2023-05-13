@@ -15,8 +15,6 @@ if [ -z $N ]; then
     fi
 fi
 
-module load AAFTF
-module load fastp
 FASTQ=input
 SAMPLEFILE=samples.csv
 ASM=asm/AAFTF
@@ -28,8 +26,14 @@ if [ -z $CPU ]; then
     CPU=1
 fi
 IFS=, # set the delimiter to be ,
-tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE
+tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
 do
+    if [[ "$NOTES" == "Too Low" ]]; then
+	    echo "skipping $N ($ID) as it is too low coverage ($NOTES)"
+	    continue
+    fi
+    module load AAFTF
+    module load fastp
     ASMFILE=$ASM/${ID}.spades.fasta
     VECCLEAN=$ASM/${ID}.vecscreen.fasta
     PURGE=$ASM/${ID}.sourpurge.fasta

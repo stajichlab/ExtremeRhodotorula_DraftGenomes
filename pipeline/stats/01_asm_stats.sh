@@ -1,16 +1,20 @@
 #!/usr/bin/bash -l
 #SBATCH -p short -N 1 -n 2 --mem 4gb --out logs/stats.log
 
-module load AAFTF
-
 SAMPLEFILE=samples.csv
 INDIR=asm
 OUTDIR=genomes
 
 mkdir -p $OUTDIR
+module load AAFTF
+
 IFS=, # set the delimiter to be ,
-tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE
+tail -n +2 $SAMPLEFILE | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
 do
+    if [[ "$NOTES" == "Too Low" ]]; then
+	echo "skipping $N ($ID) as it is too low coverage ($NOTES)"
+	continue
+    fi
     # this used to be setup for different assembly methods too
     for type in AAFTF
     do

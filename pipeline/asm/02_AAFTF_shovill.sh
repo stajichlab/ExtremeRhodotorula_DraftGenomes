@@ -29,7 +29,7 @@ WORKDIR=working_AAFTF
 PHYLUM=Mucoromycota
 mkdir -p $ASM
 IFS=, # set the delimiter to be ,
-tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SPECIES STRAIN LOCUSTAG TYPESTRAIN
+tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
 do
     ASMFILE=$ASM/${ID}.spades.fasta
     VECCLEAN=$ASM/${ID}.vecscreen.fasta
