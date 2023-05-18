@@ -38,18 +38,21 @@ export AUGUSTUS_CONFIG_PATH=$(realpath lib/augustus/3.3/config)
 export FUNANNOTATE_DB=/bigdata/stajichlab/shared/lib/funannotate_db
 
 SEED_SPECIES=aspergillus_fumigatus
-
+SEQCENTER=UCR
 IFS=,
-SPECIES="Aspergillus fumigatus"
-sed -n ${N}p $SAMPFILE | while read STRAIN NANOPORE ILLUMINA LOCUSTAG
+tail -n +2 $SAMPLES | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
 do
+    if [[ "$NOTES" == "Too Low" ]]; then
+	echo "skipping $N ($ID) as it is too low coverage ($NOTES)"
+	continue
+    fi
     echo "STRAIN is $STRAIN LOCUSTAG is $LOCUSTAG"
-    BASE=$(echo -n "$SPECIES $STRAIN" | perl -p -e 's/\s+/_/g')
-    for type in canu
+    SPECIESNOSTRAIN=$(echo -n "$SPECIES $STRAIN" | perl -p -e 's/\s+/_/g')
+    for type in AAFTF
     do
        name=$STRAIN.$type
-       MASKED=$INDIR/${name}.pilon.masked.fasta
-       echo "masked is $MASKED ($INDIR/${name}.pilon.masked.fasta)"
+       MASKED=$INDIR/${name}.masked.fasta
+       echo "masked is $MASKED ($INDIR/${name}.masked.fasta)"
        if [ ! -f $MASKED ]; then
            echo "no masked file $MASKED"
            exit

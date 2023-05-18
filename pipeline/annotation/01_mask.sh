@@ -34,14 +34,14 @@ IFS=,
 tail -n +2 $SAMPLES | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
 do
     if [[ "$NOTES" == "Too Low" ]]; then
-	echo "skipping $N ($ID) as it is too low coverage ($NOTES)"
+	echo "skipping $N ($ID $STRAIN) as it is too low coverage ($NOTES)"
 	continue
     fi
     SPECIESNOSPACE=$(echo -n "$SPECIES $STRAIN" | perl -p -e 's/[\(\)\s]+/_/g')
 
     for type in AAFTF 
     do
-	name=$ID.$type
+	name=$STRAIN.$type
 	if [ ! -f $INDIR/${name}.fasta ]; then
 		echo "Cannot find $name.fasta in $INDIR - may not have been run yet"
 		exit
@@ -55,8 +55,8 @@ do
 		if [ ! -f $LIBRARY ]; then
 			module load RepeatModeler
 			pushd $MASKDIR/${name}
-			BuildDatabase -name $ID $GENOME
-			RepeatModeler -pa $CPU -database $ID -LTRStruct
+			BuildDatabase -name $STRAIN $GENOME
+			RepeatModeler -pa $CPU -database $STRAIN -LTRStruct
 			rsync -a RM_*/consensi.fa.classified $LIBRARY
 			rsync -a RM_*/families-classified.stk $RMLIBFOLDER/$SPECIESNOSPACE.repeatmodeler.stk
 			popd

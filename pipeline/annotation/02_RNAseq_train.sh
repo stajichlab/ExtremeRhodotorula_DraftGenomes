@@ -1,5 +1,5 @@
 #!/bin/bash -l
-#SBATCH -p intel --time 6-0:00:00 --ntasks 24 --nodes 1 --mem 96G --out logs/annotate_train.%a.log
+#SBATCH -p batch --time 6-0:00:00 --ntasks 24 --nodes 1 --mem 96G --out logs/annotate_train.%a.log
 
 module unload miniconda3
 module load funannotate
@@ -34,19 +34,38 @@ echo $PASAHOME
 IFS=,
 tail -n +2 $SAMPLES | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
 do
-    name=$ID.$type
-    SPECIESNOSPACE=$(echo -n "$SPECIES $STRAIN" | perl -p -e 's/[\(\)\s]+/_/g')
+    if [[ "$NOTES" == "Too Low" ]]; then
+	    echo "skipping $N ($ID) as it is too low coverage ($NOTES)"
+	    continue
+    fi
+    echo "$ID $BASE $SRA $SPECIES $STRAIN"
+    SPECIESSTRAINNOSPACE=$(echo -n "$SPECIES $STRAIN" | perl -p -e 's/[\(\)\s]+/_/g')
+    SPECIESNOSPACE=$(echo -n "$SPECIES" | perl -p -e 's/[\(\)\s]+/_/g')
+    name=$STRAIN
+    
     # previous we were running flye and canu    
     name=$STRAIN.$type
-    MASKED=$INDIR/${SPECIESNOSPACE}.AAFTF.masked.fasta
+    MASKED=$INDIR/${SPECIESSTRAINNOSPACE}.AAFTF.masked.fasta
     echo "in is $MASKED ($INDIR/${name}."
     if [ ! -f $MASKED ]; then
-	echo "no masked file $MASKED"
-	exit
+	    echo "no masked file $MASKED"
+	    exit
     fi
-    echo funannotate train -i $MASKED -o $ODIR/${name} \
-   		--jaccard_clip --species "$SPECIES" --isolate $STRAIN \
-  		--cpus $CPU --memory ${MEM} \
-  		--single $RNAFOLDER/$STRAIN.fastq.gz \
-  		--pasa_db mysql
+    if [[ -f $RNAFOLDER/${SPECIESNOSPACE}_R1.fastq.gz ]]; then
+    	funannotate train -i $MASKED -o $ODIR/${name} \
+   	     --jaccard_clip --species "$SPECIES" --isolate $STRAIN \
+  	     --cpus $CPU --memory ${MEM} \
+  	     --left $RNAFOLDER/${SPECIESNOSPACE}_R1.fastq.gz \
+	     --right $RNAFOLDER/${SPECIESNOSPACE}_R2.fastq.gz \
+  	     --pasa_db mysql
+    elif [[ -f $RNAFOLDER/${SPECIESNOSPACE}.fastq.gz ]]; then
+	    funannotate train -i $MASKED -o $ODIR/${name} \
+   	     --jaccard_clip --species "$SPECIES" --isolate $STRAIN \
+  	     --cpus $CPU --memory ${MEM} \
+  	     --single $RNAFOLDER/${SPECIESNOSPACE}.fastq.gz \
+  	     --pasa_db mysql
+    else
+	    echo "no RNAfiles for $SPECIESNOSPACE in $RNAFOLDER"
+	    exit
+    fi
 done
