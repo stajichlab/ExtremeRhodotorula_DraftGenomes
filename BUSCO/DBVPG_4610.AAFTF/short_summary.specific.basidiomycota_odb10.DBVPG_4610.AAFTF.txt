@@ -1,0 +1,35 @@
+# BUSCO version is: 5.4.4 
+# The lineage dataset is: basidiomycota_odb10 (Creation date: 2020-09-10, number of genomes: 133, number of BUSCOs: 1764)
+# Summarized benchmarking in BUSCO notation for file /bigdata/stajichlab/shared/projects/Rhodotorula/ExtremeRhodotorula_DraftGenomes/genomes/DBVPG_4610.AAFTF.fasta
+# BUSCO was run in mode: euk_genome_aug
+# Gene predictor used: augustus
+
+	***** Results: *****
+
+	C:97.5%[S:97.4%,D:0.1%],F:0.8%,M:1.7%,n:1764	   
+	1721	Complete BUSCOs (C)			   
+	1719	Complete and single-copy BUSCOs (S)	   
+	2	Complete and duplicated BUSCOs (D)	   
+	14	Fragmented BUSCOs (F)			   
+	29	Missing BUSCOs (M)			   
+	1764	Total BUSCO groups searched		   
+
+Assembly Statistics:
+	199	Number of scaffolds
+	209	Number of contigs
+	20869562	Total length
+	0.002%	Percent gaps
+	223 KB	Scaffold N50
+	209 KB	Contigs N50
+
+
+Dependencies and versions:
+	hmmsearch: 3.1
+	bbtools: 39.01
+	makeblastdb: 2.13.0+
+	tblastn: 2.13.0+
+	augustus: 3.4.0
+	gff2gbSmallDNA.pl: None
+	new_species.pl: None
+	etraining: None
+	busco: 5.4.4
