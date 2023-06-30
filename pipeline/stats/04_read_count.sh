@@ -26,7 +26,7 @@ IFS=, # set the delimiter to be ,
 tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
 do
     if [[ "$NOTES" == "Too Low" ]]; then
-	echo "skipping $N ($ID) as it is too low coverage ($NOTES)"
+	echo "skipping $N ($ID/$STRAIN) as it is too low coverage ($NOTES)"
 	
    fi
     
@@ -37,7 +37,7 @@ do
 	    LEFTIN=$INDIR/${BASE}_R1_001.fastq.gz
 	    RIGHTIN=$INDIR/${BASE}_R2_001.fastq.gz
 	    if [ ! -f $LEFTIN ]; then
-     		echo "no $LEFTIN file for $ID/$BASE in $FASTQ dir"
+		    echo "no $LEFTIN file for $ID/$BASE (strain=$STRAIN) in $FASTQ dir"
      		exit
 	    fi
     fi
@@ -46,14 +46,16 @@ do
     echo "$LEFT $RIGHT"
     for type in AAFTF
     do
-	SORTED=$(realpath $ASM/${ID}.AAFTF.fasta)
-	REPORTOUT=${ID}.${type}
+	SORTED=$(realpath $ASM/${STRAIN}.AAFTF.fasta)
+	REPORTOUT=${STRAIN}.${type}
 	if [ -s $SORTED ]; then
 	    pushd $SCRATCH
 	    if [ ! -s $OUTDIR/${REPORTOUT}.bbmap_covstats.txt ]; then
 		bbmap.sh -Xmx${MEM}g ref=$SORTED in=$LEFT in2=$RIGHT covstats=$OUTDIR/${REPORTOUT}.bbmap_covstats.txt  statsfile=$OUTDIR/${REPORTOUT}.bbmap_summary.txt
 	    fi
 	    popd
+	else
+		echo "no $SORTED for $STRAIN ($ID) file"
 	fi
     done
 done

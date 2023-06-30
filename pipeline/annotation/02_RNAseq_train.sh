@@ -1,5 +1,5 @@
 #!/bin/bash -l
-#SBATCH -p batch --time 6-0:00:00 --ntasks 24 --nodes 1 --mem 96G --out logs/annotate_train.%a.log
+#SBATCH -p batch --time 6-0:00:00 -c 16 -n 1 -N 1 --mem 96G --out logs/annotate_train.%a.log
 
 module unload miniconda3
 module load funannotate
@@ -41,12 +41,11 @@ do
     echo "$ID $BASE $SRA $SPECIES $STRAIN"
     SPECIESSTRAINNOSPACE=$(echo -n "$SPECIES $STRAIN" | perl -p -e 's/[\(\)\s]+/_/g')
     SPECIESNOSPACE=$(echo -n "$SPECIES" | perl -p -e 's/[\(\)\s]+/_/g')
-    name=$STRAIN
+    name=$SPECIESSTRAINNOSPACE
     
     # previous we were running flye and canu    
-    name=$STRAIN.$type
     MASKED=$INDIR/${SPECIESSTRAINNOSPACE}.AAFTF.masked.fasta
-    echo "in is $MASKED ($INDIR/${name}."
+    echo "in is $MASKED ($INDIR/${name})"
     if [ ! -f $MASKED ]; then
 	    echo "no masked file $MASKED"
 	    exit

@@ -1,5 +1,5 @@
 #!/usr/bin/bash -l
-#SBATCH -p batch --time 3-0:00:00 --ntasks 16 --nodes 1 --mem 24G --out logs/annotate_predict.%a.log
+#SBATCH -p batch --time 3-0:00:00 --ntasks 32 --nodes 1 --mem 24G --out logs/annotate_predict.%a.log
 
 module load funannotate
 
@@ -34,35 +34,38 @@ if [ $N -gt $MAX ]; then
     exit
 fi
 
-export AUGUSTUS_CONFIG_PATH=$(realpath lib/augustus/3.3/config)
+#export AUGUSTUS_CONFIG_PATH=$(realpath lib/augustus/3.3/config)
 export FUNANNOTATE_DB=/bigdata/stajichlab/shared/lib/funannotate_db
 
-SEED_SPECIES=aspergillus_fumigatus
+SEED_SPECIES=ustilago
 SEQCENTER=UCR
 IFS=,
-tail -n +2 $SAMPLES | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
+tail -n +2 $SAMPFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
 do
     if [[ "$NOTES" == "Too Low" ]]; then
 	echo "skipping $N ($ID) as it is too low coverage ($NOTES)"
 	continue
     fi
-    echo "STRAIN is $STRAIN LOCUSTAG is $LOCUSTAG"
-    SPECIESNOSTRAIN=$(echo -n "$SPECIES $STRAIN" | perl -p -e 's/\s+/_/g')
-    for type in AAFTF
-    do
-       name=$STRAIN.$type
-       MASKED=$INDIR/${name}.masked.fasta
-       echo "masked is $MASKED ($INDIR/${name}.masked.fasta)"
-       if [ ! -f $MASKED ]; then
-           echo "no masked file $MASKED"
+    SPECIESSTRAINNOSPACE=$(echo -n "$SPECIES $STRAIN" | perl -p -e 's/[\(\)\s]+/_/g')
+    SPECIESNOSPACE=$(echo -n "$SPECIES" | perl -p -e 's/[\(\)\s]+/_/g')
+    name=$SPECIESSTRAINNOSPACE
+    MASKED=$INDIR/${name}.AAFTF.masked.fasta
+    echo "masked is $MASKED ($INDIR/${name}.masked.fasta)"
+    if [ ! -f $MASKED ]; then
+        echo "no masked file $MASKED"
            exit
-       fi
-      funannotate predict --cpus $CPU --keep_no_stops --SeqCenter $SEQCENTER \
-       --busco_db $BUSCO --optimize_augustus \
-	     --strain $STRAIN --min_training_models 100 \
-       --AUGUSTUS_CONFIG_PATH $AUGUSTUS_CONFIG_PATH \
-	     -i $MASKED --name $LOCUSTAG \
-       --protein_evidence $FUNANNOTATE_DB/uniprot_sprot.fasta \
-	     -s "$SPECIES" -o $OUTDIR/${name} --busco_seed_species $SEED_SPECIES
-  done
+    fi
+    if [ -z "$LOCUSTAG" ]; then
+	    LOCUSTAG=$(echo -n $STRAIN | perl -p -e 's/[\s_\.\-]+//g')
+    fi
+    echo "LOCUS is $LOCUSTAG MASKED is $MASKED"
+
+    time funannotate predict --cpus $CPU --keep_no_stops --SeqCenter $SEQCENTER \
+		--busco_db $BUSCO --optimize_augustus \
+		--strain $STRAIN --min_training_models 100 \
+		--AUGUSTUS_CONFIG_PATH $AUGUSTUS_CONFIG_PATH \
+		-i $MASKED --name $LOCUSTAG \
+		--protein_evidence $FUNANNOTATE_DB/uniprot_sprot.fasta \
+		-s "$SPECIES" -o $OUTDIR/${name}  --tmpdir $SCRATCH
+		#--busco_seed_species $SEED_SPECIES
 done

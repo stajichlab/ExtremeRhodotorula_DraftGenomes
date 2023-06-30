@@ -32,7 +32,8 @@ JELLYFISHSIZE=1000000000
 IFS=,
 KMER=21
 READLEN=150 # note this assumes all projects are 150bp reads which they may not be
-tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE
+IFS=, # set the delimiter to be ,
+tail -n +2 $SAMPLEFILE | sed -n ${N}p | while read ID BASE SRA SPECIES STRAIN LOCUSTAG BIOPROJECT BIOSAMPLE NOTES
 do
     # for this project two different file base but this needs fixing otherse)
     if [ ! -f $GENOMESCOPE/$STRAIN.histo ]; then
