@@ -1,0 +1,10 @@
+GenomeScope version 1.0
+k = 21
+
+property                      min               max               
+Heterozygosity                0.0199472%        0.0214468%        
+Genome Haploid Length         21,641,659 bp     21,644,841 bp     
+Genome Repeat Length          2,117,682 bp      2,117,993 bp      
+Genome Unique Length          19,523,977 bp     19,526,848 bp     
+Model Fit                     97.4415%          98.0606%          
+Read Error Rate               0.181903%         0.181903%         
