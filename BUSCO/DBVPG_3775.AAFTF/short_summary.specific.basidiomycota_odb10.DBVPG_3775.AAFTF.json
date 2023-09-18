@@ -2,7 +2,7 @@
     "parameters": {
         "out_path": "/bigdata/stajichlab/shared/projects/Rhodotorula/ExtremeRhodotorula_DraftGenomes/BUSCO",
         "cpu": "8",
-        "force": "False",
+        "force": "True",
         "restart": "False",
         "quiet": "False",
         "download_path": "/srv/projects/db/BUSCO/v10",
@@ -51,19 +51,19 @@
         "busco": "5.4.4"
     },
     "results": {
-        "one_line_summary": "C:97.0%[S:96.9%,D:0.1%],F:0.9%,M:2.1%,n:1764",
+        "one_line_summary": "C:97.0%[S:96.9%,D:0.1%],F:0.8%,M:2.2%,n:1764",
         "Complete": 97.0,
         "Single copy": 96.9,
         "Multi copy": 0.1,
-        "Fragmented": 0.9,
-        "Missing": 2.1,
+        "Fragmented": 0.8,
+        "Missing": 2.2,
         "n_markers": 1764,
         "domain": "eukaryota",
-        "Number of scaffolds": "155",
-        "Number of contigs": "159",
-        "Total length": "19988857",
-        "Percent gaps": "0.001%",
-        "Scaffold N50": "359532",
-        "Contigs N50": "359532"
+        "Number of scaffolds": "158",
+        "Number of contigs": "165",
+        "Total length": "19981421",
+        "Percent gaps": "0.003%",
+        "Scaffold N50": "376214",
+        "Contigs N50": "351377"
     }
 }
