@@ -47,7 +47,7 @@ do
 		exit
 	fi
 	OUTNAME=$OUTDIR/${SPECIESNOSPACE}.${type}.masked.fasta
-	if [ ! -s $OUTNAME ]; then
+	if [[ ! -s $OUTNAME || $INDIR/${name}.fasta -nt $OUTNAME ]]; then
 	    mkdir -p $MASKDIR/${name}
 	    GENOME=$(realpath $INDIR/${name}.fasta)
 	    if [ ! -f $MASKDIR/${name}/${name}.fasta.masked ]; then
@@ -56,7 +56,7 @@ do
 			module load RepeatModeler
 			pushd $MASKDIR/${name}
 			BuildDatabase -name $STRAIN $GENOME
-			RepeatModeler -pa $CPU -database $STRAIN -LTRStruct
+			RepeatModeler -threads $CPU -database $STRAIN -LTRStruct
 			rsync -a RM_*/consensi.fa.classified $LIBRARY
 			rsync -a RM_*/families-classified.stk $RMLIBFOLDER/$SPECIESNOSPACE.repeatmodeler.stk
 			popd
@@ -68,7 +68,7 @@ do
 	    fi
 	    rsync -a $MASKDIR/${name}/${name}.fasta.masked $OUTNAME
 	else
-	    echo "Skipping ${name} as masked file already exists"
+	    echo "Skipping ${name} as masked file already exists and is newer than current assembly file"
 	fi
     done
 done

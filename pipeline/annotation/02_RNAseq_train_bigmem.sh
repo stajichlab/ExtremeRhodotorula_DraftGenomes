@@ -1,8 +1,9 @@
 #!/bin/bash -l
-#SBATCH -p highmem --time 6-0:00:00 --ntasks 32 --nodes 1 --mem 256G --out logs/annotate_train.%a.log
+#SBATCH -p intel --time 6-0:00:00 -c 24 -n 1 -N 1 --mem 256G --out logs/annotate_train.%a.log
 
-module unload miniconda3
-module load funannotate
+# moved module loading to bottom so we can speed up in case we don't need to actually run this
+# module unload miniconda3
+# module load funannotate
 
 MEM=256G
 CPU=1
@@ -14,6 +15,7 @@ INDIR=genomes_to_annotate
 ODIR=annotation
 SAMPLES=samples.csv
 RNAFOLDER=lib/RNASeq
+TRAININGCACHE=$(realpath lib/prediction_support/training_cached)
 N=${SLURM_ARRAY_TASK_ID}
 
 if [ -z $N ]; then
@@ -42,6 +44,7 @@ do
     SPECIESSTRAINNOSPACE=$(echo -n "$SPECIES $STRAIN" | perl -p -e 's/[\(\)\s]+/_/g')
     SPECIESNOSPACE=$(echo -n "$SPECIES" | perl -p -e 's/[\(\)\s]+/_/g')
     name=$SPECIESSTRAINNOSPACE
+    echo "Species is $SPECIESNOSPACE and RNASeq would be $RNAFOLDER/${SPECIESNOSPACE}_R1.fastq.gz"
     
     # previous we were running flye and canu    
     MASKED=$INDIR/${SPECIESSTRAINNOSPACE}.AAFTF.masked.fasta
@@ -50,6 +53,36 @@ do
 	    echo "no masked file $MASKED"
 	    exit
     fi
+    if [[ -d $ODIR/${name}/training/genome.fasta && $MASKED -nt $ODIR/${name}/training/genome.fasta ]]; then
+	echo "existing training is OLDER than the new genome assembly $MASKED, need to rebuild"
+	md5sum $ODIR/${name}/training/genome.fasta
+	md5sum $MASKED
+	ls -l $MASKED $ODIR/${name}/training/genome.fasta
+	exit
+    fi
+    mkdir -p $ODIR/${name}/training
+    if [ -d $TRAININGCACHE/${SPECIESNOSPACE} ]; then
+	for nm in trimmomatic normalize
+	do
+	    if [ ! -e $ODIR/${name}/training/$nm ]; then
+		    echo "linking $nm in $ODIR/${name}/training/$nm"
+		    ln -s $TRAININGCACHE/${SPECIESNOSPACE}/$nm $ODIR/${name}/training/$nm
+	    fi
+	done
+    fi
+    #  load the modules only at bottom for speed since we might skip
+    module unload miniconda3
+    module load funannotate
+    if [[ -f $ODIR/${name}/training/transcript.alignments.gff3 && $MASKED -nt $ODIR/${name}/training/transcript.alignments.gff3  ]]; then
+        echo "already generated alignments but  $MASKED is newer than $ODIR/${name}/training/transcript.alignments.gff3, need to remove and rerun"
+        exit
+    fi
+    if [ -f $ODIR/${name}/training/transcript.alignments.gff3 ]; then
+        echo "transcript alignments already generated for $name ... skipping"
+        exit
+    fi
+    echo "using $RNAFOLDER/${SPECIESNOSPACE}_R1.fastq.gz and $RNAFOLDER/${SPECIESNOSPACE}_R2.fastq.gz as input RNAseq"
+    
     if [[ -f $RNAFOLDER/${SPECIESNOSPACE}_R1.fastq.gz ]]; then
     	funannotate train -i $MASKED -o $ODIR/${name} \
    	     --jaccard_clip --species "$SPECIES" --isolate $STRAIN \
