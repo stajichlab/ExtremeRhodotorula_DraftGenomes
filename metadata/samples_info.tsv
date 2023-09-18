@@ -1,0 +1,180 @@
+BioSample	abs_air_humidity	air_temp	biotic_relationship	build_occup_type	building_setting	carb_dioxide	collected_by	collection_date	cultivar	ecotype	env_broad_scale	env_local_scale	env_medium	estimated_size	filter_type	flight_no.	geo_loc_name	heat_cool_type	host	host_disease	indoor_space	isol_growth_condt	isolate	isolation_media	isolation_source	lat_lon	light_type	location	num_replicons	occup_samp	occupant_dens_samp	organism_count	original_organism_name	ploidy	propagation	ref_biomaterial	rel_air_humidity	rel_to_oxygen	sample_type	space_typ_state	strain	study	trophic_level	typ_occupant_dens	ventilation_type
+
+SAMN06285187			free living					1996-10-08			polar desert biome	soil	dry soil	19			Antarctica: Edmonson Point, South Valley					15°C culture growth for 2-4 weeks				74.3333333 S 165.1333333 E			missing					haploid	asexual						CCFEE 5036		heterotroph		
+
+SAMN07235707								2015			Unknown :Obtained from a farmer's market	Unknown :Obtained from a farmer's market	Unknown :Obtained from a farmer's market	19 MB			Nigeria: Africa		Distemonanthus benthamianus			1/2X strength TSA , 30 degrees celcius			farmer's market	6.8322 N 3.6319 E			N/A					diploid	asexual						RIT389				
+
+SAMN07313544							Anindita Seal, Calcutta University	2013-04-01									India: Jaduguda mines		Typha angustifolia						wetland	22.23 N 86.13 E										Genom Data. 2015 Oct 24;6:237-40. doi: 10.1016/j.gdata.2015.09.023. eCollection 2015 Dec		aerobe	missing		JGTA-S1				
+
+SAMN08581131								2016	missing	missing	missing	missing	missing	20106177			Germany					missing	missing		kefir	missing			missing					not collected	not collected						SB-353				
+
+SAMN14603650	missing	22.2		not applicable	not applicable	2798		2015-03-04			indoor biome	Cupola (Node 3)	Aluminum		Not applicable	1	USA: International Space Station	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	ISS-1		6	850	Not applicable					40.2			typical occupied	IF1SW-B1	MT-1		6	ECLSS
+
+SAMN14603651	missing	22.2		not applicable	not applicable	2798		2015-03-04			indoor biome	Dining table (Node 1)	Polymide		Not applicable	1	USA: International Space Station	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	ISS-4		6	850	Not applicable					40.2			typical occupied	IF4SW-B1	MT-1		6	ECLSS
+
+SAMN14603652	missing	22.2		not applicable	not applicable	2798		2015-03-04			indoor biome	PMM port 1	Polymide		Not applicable	1	USA: International Space Station	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	ISS-4		6	850	Not applicable					40.2			typical occupied	IF4SW-B2	MT-1		6	ECLSS
+
+SAMN14603653	missing	22.2		not applicable	not applicable	2798		2015-03-04			indoor biome	PMM port 1	Nomex		Not applicable	1	USA: International Space Station	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	ISS-6		6	850	Not applicable					40.2			typical occupied	IF6SW-B2	MT-1		6	ECLSS
+
+SAMN14603654	missing	22.2		not applicable	not applicable	2798		2015-03-04			indoor biome	Lab 3 overhead	Aeroglaze		Not applicable	1	USA: International Space Station	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	ISS-7		6	850	Not applicable					40.2			typical occupied	IF7SW-B3	MT-1		6	ECLSS
+
+SAMN14603655	missing	22.2		not applicable	not applicable	2798		2015-03-04			indoor biome	Port Crew quarters (Node 2)	Nomex		Not applicable	1	USA: International Space Station	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	ISS-8		6	850	Not applicable					40.2			typical occupied	IF8SW-B2	MT-1		6	ECLSS
+
+SAMN14603656	missing	22.2		not applicable	not applicable	2798		2015-03-04			indoor biome	Port Crew quarters (Node 2)	Nomex		Not applicable	1	USA: International Space Station	Not applicable			Not applicable	Blood agar : 25C		Blood agar		NA	electric light	ISS-8		6	850	Not applicable					40.2			typical occupied	IF8SW-P2	MT-1		6	ECLSS
+
+SAMN14603657	missing	22.2		not applicable	not applicable	2798		2015-05-15			indoor biome	PMM port 1	Nomex		Not applicable	2	USA: International Space Station	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	ISS-6		6	850	Not applicable					39.25			typical occupied	IIF6SW-B1	MT-1		6	ECLSS
+
+SAMN14603658	missing	22.2		not applicable	not applicable	2798		2015-05-15			indoor biome	PMM port 1	Nomex		Not applicable	2	USA: International Space Station	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	ISS-6		6	850	Not applicable					39.25			typical occupied	IIF6SW-B2	MT-1		6	ECLSS
+
+SAMN14603659	missing	22.2		not applicable	not applicable	2798		2015-05-15			indoor biome	Port Crew quarters (Node 2)	Nomex		Not applicable	2	USA: International Space Station	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	ISS-8		6	850	Not applicable					39.25			typical occupied	IIF8SW-B2	MT-1		6	ECLSS
+
+SAMN14603660	missing	22.2		not applicable	not applicable	2798		2015-05-15			indoor biome	Port Crew quarters (Node 2)	Nomex		Not applicable	2	USA: International Space Station	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	ISS-8		6	850	Not applicable					39.25			typical occupied	IIF8SW-B3	MT-1		6	ECLSS
+
+SAMN14603661	missing	22.2		not applicable	not applicable	2798		2015-05-15			indoor biome	Waste & hygeine compt	Aeroglaze		Not applicable	2	USA: International Space Station	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	ISS-2		6	850	Not applicable					39.25			typical occupied	IIF2*SW-B1	MT-1		6	ECLSS
+
+SAMN14603662	missing	22.2		not applicable	not applicable	2798		2015-03-04			indoor biome	Cupola (Node 3)	Aluminum		Not applicable	1	USA: International Space Station	Not applicable			Not applicable	PDA : 25C		PDA		NA	electric light	ISS-1		6	850	Not applicable					39.25			typical occupied	IF1SW-F2	MT-1		6	ECLSS
+
+SAMN14603663	missing	22.2		not applicable	not applicable	2798		2015-03-04			indoor biome	ARED (Node 3)	Mineral Grit		Not applicable	1	USA: International Space Station	Not applicable			Not applicable	PDA : 25C		PDA		NA	electric light	ISS-3		6	850	Not applicable					39.25			typical occupied	IF3SW-F2	MT-1		6	ECLSS
+
+SAMN14603664	missing	22.2		not applicable	not applicable	2798		2015-03-04			indoor biome	Dining table (Node 1)	Polymide		Not applicable	1	USA: International Space Station	Not applicable			Not applicable	PDA : 25C		PDA		NA	electric light	ISS-4		6	850	Not applicable					39.25			typical occupied	IF4SW-F2	MT-1		6	ECLSS
+
+SAMN14603665	missing	22.2		not applicable	not applicable	2798		2015-03-04			indoor biome	Zero G stowage rack	Nomex		Not applicable	1	USA: International Space Station	Not applicable			Not applicable	PDA : 25C		PDA		NA	electric light	ISS-5		6	850	Not applicable					39.25			typical occupied	IF5SW-F1	MT-1		6	ECLSS
+
+SAMN14603666	missing	22.2		not applicable	not applicable	2798		2015-03-04			indoor biome	PMM port 1	Nomex		Not applicable	1	USA: International Space Station	Not applicable			Not applicable	PDA : 25C		PDA		NA	electric light	ISS-6		6	850	Not applicable					39.25			typical occupied	IF6SW-F1	MT-1		6	ECLSS
+
+SAMN14603667	missing	22.2		not applicable	not applicable	2798		2015-05-15			indoor biome	cupola (Node 3)	Aluminum		Not applicable	2	USA: International Space Station	Not applicable			Not applicable	PDA : 25C		PDA		NA	electric light	ISS-1		6	850	Not applicable					39.25			typical occupied	IIF1SW-F1	MT-1		6	ECLSS
+
+SAMN14603668	missing	22.2		not applicable	not applicable	2798		2015-05-15			indoor biome	waste & hygeine compt	Aluminum		Not applicable	2	USA: International Space Station	Not applicable			Not applicable	PDA : 25C		PDA		NA	electric light	ISS-2		6	850	Not applicable					39.25			typical occupied	IIF2SW-F1	MT-1		6	ECLSS
+
+SAMN14603669	missing	22.2		not applicable	not applicable	2798		2015-05-15			indoor biome	Dining table (Node 1)	Polymide		Not applicable	2	USA: International Space Station	Not applicable			Not applicable	PDA : 25C		PDA		NA	electric light	ISS-4		6	850	Not applicable					39.25			typical occupied	IIF4SW-F1	MT-1		6	ECLSS
+
+SAMN14603670	missing	22.2		not applicable	not applicable	2798		2015-05-15			indoor biome	Zero G stowage rack	Nomex		Not applicable	2	USA: International Space Station	Not applicable			Not applicable	PDA : 25C		PDA		NA	electric light	ISS-5		6	850	Not applicable					39.25			typical occupied	IIF5SW-F2	MT-1		6	ECLSS
+
+SAMN14603671	missing	22.2		not applicable	not applicable	2798		2015-05-15			indoor biome	Port Crew quarters (Node 2)	Nomex		Not applicable	2	USA: International Space Station	Not applicable			Not applicable	PDA : 25C		PDA		NA	electric light	ISS-8		6	850	Not applicable					39.25			typical occupied	IIF8SW-F1	MT-1		6	ECLSS
+
+SAMN14603672	missing	22.2		not applicable	not applicable	2798		2015-05-15			indoor biome	Waste & hygeine compt	Aluminum		Not applicable	2	USA: International Space Station	Not applicable			Not applicable	PDA : 25C		PDA		NA	electric light	ISS-2		6	850	Not applicable					39.25			typical occupied	IIF2*SW-F1	MT-1		6	ECLSS
+
+SAMN14603673	missing	22.2		not applicable	not applicable	2798		2015-05-15			indoor biome	PMM port 1	Nomex		Not applicable	2	USA: International Space Station	Not applicable			Not applicable	PDA : 25C		PDA		NA	electric light	ISS-6		6	850	Not applicable					39.25			typical occupied	IIF6SW-F1	MT-1		6	ECLSS
+
+SAMN14603674	missing	22.2		not applicable	not applicable	2798		2015-05-15			Control	Control Wipe	Not applicable		Not applicable		USA: International Space Station	Not applicable			Not applicable	PDA : 25C		PDA		NA	electric light	ISS		6	850	Not applicable					39.25			typical occupied	IIFCSW-F1	MT-1		6	ECLSS
+
+SAMN14603675	missing	20.9		not applicable	not applicable	missing		2014-11-11			inside capsule	inside capsule CRV5 (L1)	Not applicable		Not applicable	Ground	USA: SpaceX	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	SpaceX		6	850	Not applicable					45.2			Not applicable	IFCSG-B1	MT-1		6	missing
+
+SAMN14603676	missing	20.9		not applicable	not applicable	missing		2014-11-11			Outside capsule	Outside capsule CRV5 (L1)	Not applicabe		Not applicable	Ground	USA: SpaceX	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	SpaceX		6	850	Not applicable					45.2			Not applicable	IF1SG-B1	MT-1		6	missing
+
+SAMN14603677	missing	20.9		not applicable	not applicable	missing		2014-11-11			Outside capsule	Inside Capsule CRV5 (S1)	Not applicable		Not applicable	Ground	USA: SpaceX-3	Not applicable			Not applicable	R2A : 25C		R2A		NA	electric light	SpaceX-3		6	850	Not applicable					45.2			Not applicable	IF3SG-B1	MT-1		6	missing
+
+SAMN14763841	missing	20.9		Not applicable	Not applicable	Missing		2014-11-11			Outside capsule	Outside capsule CRV5-L2	Not applicable		Not applicable		USA: SpaceX	Not applicable			Not applicable	R2A			outside capsule of spaceX during MT-1	Not applicable	electric light			6	850	Not applicable					45.2			Not applicable	IF2SG-B1			6	missing
+
+SAMN14763842	missing	20.9		Not applicable	Not applicable	Missing		2014-11-11			inside capsule	inside capsule CRV5-L6	Not applicable		Not applicable		USA: SpaceX	Not applicable			Not applicable	R2A			inside capsule of spaceX during MT-1	Not applicable	electric light			6	850	Not applicable					45.2			Not applicable	IF6SG-B1			6	missing
+
+SAMN14763843	missing	20.9		Not applicable	Not applicable	Missing		2014-11-11			outside capsule	outside capsule CRV5-L7	Not applicable		Not applicable		USA: SpaceX	Not applicable			Not applicable	R2A			outside capsule of spaceX during MT-1	Not applicable	electric light			6	850	Not applicable					45.2			Not applicable	IF7SG-B1			6	missing
+
+SAMN14763844	missing	20.9		Not applicable	Not applicable	Missing		2014-11-11			inside/control	inside/control CRV5-L8	Not applicable		Not applicable		USA: SpaceX	Not applicable			Not applicable	R2A			inside/control	Not applicable	electric light			6	850	Not applicable					45.2			Not applicable	IF8SG-B1			6	missing
+
+SAMN15543676								2014-09-20									USA								Vacuum filter from cleanroom								Rhodotorula mucilaginosa CBS 316						pure culture		VS AB II KN 2				
+
+SAMN18883762	missing	22.5		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum with polyurethane topcoat (Aeroglaze A276)		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_1S_P_1A			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883763	missing	22.5		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum with polyurethane topcoat (Aeroglaze A276)		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_1S_P_1B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883764	missing	22.5		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum with polyurethane topcoat (Aeroglaze A276)		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_1S_P_1C			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883773	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum and stainless steel		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_4S_B_2A			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883774	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum and stainless steel		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_4S_B_2B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883775	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum and stainless steel		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_4S_B_2C			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883776	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum and stainless steel		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_4S_P_3B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883777	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum and stainless steel		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_4S_P_3C			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883778	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum and stainless steel		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_4S_P_4A			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883779	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum and stainless steel		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_4S_P_4B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883780	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum and stainless steel		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_4S_P_5A			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883781	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum and stainless steel		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_4S_P_5B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883783	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_6S_B_1A			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883784	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_6S_B_1B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883785	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_6S_B_1C			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883786	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_6S_P_1A			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883787	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_6S_P_1B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883788	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_6S_P_1C			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883789	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_6S_P_2A			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883790	missing	24.4		Not applicable	Not applicable	0.33 kPa		2018-04-13			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_6S_P_2B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883793	missing	24.4		Not applicable	Not applicable	0.35 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum with polyurethane topcoat (Aeroglaze A276)		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_7S_B_2A			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883794	missing	24.4		Not applicable	Not applicable	0.35 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum with polyurethane topcoat (Aeroglaze A276)		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_7S_B_2B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883795	missing	24.4		Not applicable	Not applicable	0.35 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum with polyurethane topcoat (Aeroglaze A276)		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_7S_B_2C			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883796	missing	24.4		Not applicable	Not applicable	0.35 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum with polyurethane topcoat (Aeroglaze A276)		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_7S_P_6B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883797	missing	24.4		Not applicable	Not applicable	0.35 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum with polyurethane topcoat (Aeroglaze A276)		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_7S_P_7A			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883798	missing	24.4		Not applicable	Not applicable	0.35 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum with polyurethane topcoat (Aeroglaze A276)		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_7S_P_7B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883799	missing	24.4		Not applicable	Not applicable	0.35 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum with polyurethane topcoat (Aeroglaze A276)		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_7S_P_7C			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883802	missing	21.5		Not applicable	Not applicable	0.35 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum covered in quilted Gore-Tex, BISCO, Durette felt, and Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_8S_B_1B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883805	missing	21.5		Not applicable	Not applicable	0.35 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum covered in quilted Gore-Tex, BISCO, Durette felt, and Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_8S_P_5A			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883806	missing	21.5		Not applicable	Not applicable	0.35 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum covered in quilted Gore-Tex, BISCO, Durette felt, and Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_8S_P_5B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883807	missing	21.5		Not applicable	Not applicable	0.35 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum covered in quilted Gore-Tex, BISCO, Durette felt, and Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_8S_P_6A			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883808	missing	21.5		Not applicable	Not applicable	0.35 kPa		2018-04-13			indoor biome	ISS environmental surface	aluminum covered in quilted Gore-Tex, BISCO, Durette felt, and Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					39.5			typical occupied	F6_8S_P_6B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883815	missing	22.5		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	aluminum with polyurethane topcoat (Aeroglaze A276)		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_1S_2B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883816	missing	22.5		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	aluminum with polyurethane topcoat (Aeroglaze A276)		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_1S_3B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883817	missing	22.5		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	mineral grit embedded in adhesive paper		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_3S_1B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883818	missing	22.5		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	mineral grit embedded in adhesive paper		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_3S_1P			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883819	missing	22.5		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	mineral grit embedded in adhesive paper		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_3S_2B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883820	missing	22.5		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	mineral grit embedded in adhesive paper		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_3S_2P			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883821	missing	22.5		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	mineral grit embedded in adhesive paper		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_3S_3B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883822	missing	22.5		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	mineral grit embedded in adhesive paper		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_3S_3P			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883824	missing	24.72		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	aluminum and stainless steel		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_4S_1P			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883826	missing	24.72		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	aluminum and stainless steel		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_4S_2P			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883828	missing	24.72		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	aluminum and stainless steel		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_4S_4B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883830	missing	24.72		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	aluminum and stainless steel		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_4S_5B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883832	missing	24.72		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_5S_2B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883834	missing	24.72		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_5S_3B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883837	missing	24.72		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_5S_4P			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883838	missing	24.72		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_5S_5P			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883839	missing	24.72		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	Blood agar: 37°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_5S_6P			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883840	missing	24.72		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_6S_1B			6	closed system (air processed by Air Revitalization System)
+
+SAMN18883841	missing	24.72		Not applicable	Not applicable	0.36 kPa		2018-12-14			indoor biome	ISS environmental surface	Nomex		Not applicable		USA: International Space Station	heat pump			Not applicable	R2A: 25°C				Not applicable	electric light			6	850	Not applicable					41.25			typical occupied	F8_6S_2B			6	closed system (air processed by Air Revitalization System)
+
+SAMN20056676							Hamad Medical Corporation	2020-01-27									Qatar		Homo sapiens	fungemia			rhodo3571		blood	25.28 N 51.53 E																			
+
