@@ -42,11 +42,11 @@ do
 	if [ -f $GENOMEFILE ]; then
 	    echo "GENOMEFILE is $GENOMEFILE"
 	    GENOMEFILE=$(realpath $GENOMEFILE)
-	    if [ -d "$OUTFOLDER/${ID}" ];  then
+	    if [ -d "$OUTFOLDER/${ID}.${type}" ];  then
 		echo "Already have run $ID in folder busco - do you need to delete it to rerun?"
 		exit
 	    else
-		busco -m genome -l $LINEAGE -c $CPU -o ${ID}.${type} --out_path ${OUTFOLDER} --offline --augustus_species $SEED_SPECIES \
+		busco -f -m genome -l $LINEAGE -c $CPU -o ${ID}.${type} --out_path ${OUTFOLDER} --offline --augustus_species $SEED_SPECIES \
 		      --in $GENOMEFILE --download_path $BUSCO_LINEAGES
 	    fi
 	fi

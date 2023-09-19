@@ -59,7 +59,10 @@ do
 	    LOCUSTAG=$(echo -n $STRAIN | perl -p -e 's/[\s_\.\-]+//g')
     fi
     echo "LOCUS is $LOCUSTAG MASKED is $MASKED"
-
+    if [[ -f $OUTDIR/${name}/predict_misc/protein_alignments.gff3 && $MASKED -nt $OUTDIR/${name}/predict_misc/protein_alignments.gff3 ]]; then
+	    echo "$MASKED is newer than $OUTDIR/${name}/predict_misc/protein_alignments.gff3, need to remove existing files to ensure clean re-run"
+	    exit
+    fi
     time funannotate predict --cpus $CPU --keep_no_stops --SeqCenter $SEQCENTER \
 		--busco_db $BUSCO --optimize_augustus \
 		--strain $STRAIN --min_training_models 100 \

@@ -83,7 +83,8 @@ do
     fi
     
     if [ ! -f $PILON ]; then
-    	AAFTF pilon -i $CLEANDUP -o $PILON -c $CPU --left $LEFTIN --right $RIGHTIN --mem $MEM -it 2
+	AAFTF polish --method polca -i $CLEANDUP -o $PILON -c $CPU --left $LEFT  --right $RIGHT --mem $MEM
+    	#AAFTF pilon -i $CLEANDUP -o $PILON -c $CPU --left $LEFTIN --right $RIGHTIN --mem $MEM -it 2
     fi
     
     if [ ! -f $PILON ]; then

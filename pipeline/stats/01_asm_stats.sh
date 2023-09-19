@@ -22,6 +22,9 @@ do
 		echo "cannot find $INDIR/$type/$ID.sorted.fasta"
 		continue
 	fi
+	if [[ ! -f $OUTDIR/$STRAIN.$type.fasta || $INDIR/$type/$ID.sorted.fasta -nt $OUTDIR/$STRAIN.$type.fasta ]]; then
+		echo "need to re-copy or copy 1st time $INDIR/$type/$ID.sorted.fasta $OUTDIR/$STRAIN.$type.fasta"
+	fi
 	rsync -a $INDIR/$type/$ID.sorted.fasta $OUTDIR/$STRAIN.$type.fasta
 	if [[ ! -f $OUTDIR/$STRAIN.$type.stats.txt || $OUTDIR/$STRAIN.$type.fasta -nt $OUTDIR/$STRAIN.$type.stats.txt ]]; then
     	    AAFTF assess -i $OUTDIR/$STRAIN.$type.fasta -r $OUTDIR/$STRAIN.$type.stats.txt
