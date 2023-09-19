@@ -21,7 +21,7 @@ p <- ggplot(data = merged, mapping = aes(x = Species, y = TOTAL_LENGTH/10**6,col
   scale_color_manual(values=getPalette) +
   ylab("Length (Mb)") 
 
-ggsave("genome_size_boxplot.pdf",p,width=8,height=6)
+ggsave("genome_size_boxplot.pdf",p,width=5,height=4)
 
 p2 <- ggplot(data = merged %>% filter(BUSCO_Complete > 75), 
              mapping = aes(x = log(Average_Coverage)/log(10), y=BUSCO_Complete,color=Species)) +
