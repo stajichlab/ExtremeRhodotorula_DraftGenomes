@@ -63,6 +63,10 @@ do
 	    echo "$MASKED is newer than $OUTDIR/${name}/predict_misc/protein_alignments.gff3, need to remove existing files to ensure clean re-run"
 	    exit
     fi
+    if [[ -f $OUTDIR/${name}/predict_misc/augustus.gff3 && $OUTDIR/${name}/training/funannotate_train.stringtie.gtf -nt $OUTDIR/${name}/predict_misc/augustus.gff3 ]]; then
+	    rm -rf $OUTDIR/${name}/predict_misc/augustus.* $OUTDIR/${name}/predict_misc/snap* $OUTDIR/${name}/predict_misc/EVM \
+		    $OUTDIR/${name}/predict_misc/hints* $OUTDIR/${name}/predict_misc/genemark.* $OUTDIR/${name}/predict_misc/gene_predictions.gff3
+    fi
     time funannotate predict --cpus $CPU --keep_no_stops --SeqCenter $SEQCENTER \
 		--busco_db $BUSCO --optimize_augustus \
 		--strain $STRAIN --min_training_models 100 \

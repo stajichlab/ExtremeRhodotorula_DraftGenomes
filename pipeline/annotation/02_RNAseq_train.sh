@@ -74,11 +74,11 @@ do
     module load funannotate
     module load trinity-rnaseq
     export PASAHOME=$HOME/.pasa
-    if [[ -f $ODIR/${name}/training/transcript.alignments.gff3 && $MASKED -nt $ODIR/${name}/training/transcript.alignments.gff3 ]]; then
-        echo "already generated alignments but  $MASKED is newer than $ODIR/${name}/training/transcript.alignments.gff3, need to remove and rerun"
+    if [[ -f $ODIR/${name}/training/funannotate_train.pasa.gff3 && $MASKED -nt $ODIR/${name}/training/funannotate_train.pasa.gff3 ]]; then
+        echo "already generated alignments but  $MASKED is newer than $ODIR/${name}/training/funannotate_train.pasa.gff3, need to remove and rerun"
         exit
     fi
-    if [ -f $ODIR/${name}/training/transcript.alignments.gff3 ]; then
+    if [ -f $ODIR/${name}/training/funannotate_train.pasa.gff3 ]; then
 	    echo "transcript alignments already generated for $name ($ODIR/${name}/training/trinity.alignments.gff3) ... skipping"
         exit
     fi

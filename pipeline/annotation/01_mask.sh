@@ -50,22 +50,20 @@ do
 	if [[ ! -s $OUTNAME || $INDIR/${name}.fasta -nt $OUTNAME ]]; then
 	    mkdir -p $MASKDIR/${name}
 	    GENOME=$(realpath $INDIR/${name}.fasta)
-	    if [ ! -f $MASKDIR/${name}/${name}.fasta.masked ]; then
-		LIBRARY=$RMLIBFOLDER/$SPECIESNOSPACE.repeatmodeler.lib
-		if [ ! -f $LIBRARY ]; then
-			module load RepeatModeler
-			pushd $MASKDIR/${name}
-			BuildDatabase -name $STRAIN $GENOME
-			RepeatModeler -threads $CPU -database $STRAIN -LTRStruct
-			rsync -a RM_*/consensi.fa.classified $LIBRARY
-			rsync -a RM_*/families-classified.stk $RMLIBFOLDER/$SPECIESNOSPACE.repeatmodeler.stk
-			popd
-		fi
-		if [ -f $LIBRARY ]; then
-	    		module load RepeatMasker
-	    		RepeatMasker -e ncbi -xsmall -s -pa $CPU -lib $LIBRARY -dir $MASKDIR/${name} -gff $INDIR/${name}.fasta
-		fi
+	    LIBRARY=$RMLIBFOLDER/$SPECIESNOSPACE.repeatmodeler.lib
+	    if [[ ! -f $LIBRARY || $INDIR/${name}.fasta -nt $OUTNAME ]]; then
+		module load RepeatModeler
+		pushd $MASKDIR/${name}
+		BuildDatabase -name $STRAIN $GENOME
+		RepeatModeler -threads $CPU -database $STRAIN -LTRStruct
+		rsync -a RM_*/consensi.fa.classified $LIBRARY
+		rsync -a RM_*/families-classified.stk $RMLIBFOLDER/$SPECIESNOSPACE.repeatmodeler.stk
+		popd
 	    fi
+	    if [ -f $LIBRARY ]; then
+	    	module load RepeatMasker
+	    	RepeatMasker -e ncbi -xsmall -s -pa $CPU -lib $LIBRARY -dir $MASKDIR/${name} -gff $INDIR/${name}.fasta
+	    fi	
 	    rsync -a $MASKDIR/${name}/${name}.fasta.masked $OUTNAME
 	else
 	    echo "Skipping ${name} as masked file already exists and is newer than current assembly file"
