@@ -1,0 +1,50 @@
+Reads Used:           	72588730	(10960898230 bases)
+
+Mapping:          	3001.036 seconds.
+Reads/sec:       	24187.89
+kBases/sec:      	3652.37
+
+
+Pairing data:   	pct pairs	num pairs 	pct bases	   num bases
+
+mated pairs:     	 81.5380% 	 29593689 	 81.5380% 	  8937294078
+bad pairs:       	  0.1369% 	    49694 	  0.1369% 	    15007588
+insert size avg: 	  234.78
+
+
+Read 1 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 83.0847% 	 30155075 	 83.0847% 	  4553416325
+unambiguous:     	 82.9820% 	 30117799 	 82.9820% 	  4547787649
+ambiguous:       	  0.1027% 	    37276 	  0.1027% 	     5628676
+low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
+
+perfect best site:	 56.8617% 	 20637593 	 56.8617% 	  3116276543
+semiperfect site:	 56.9368% 	 20664837 	 56.9368% 	  3120390387
+rescued:         	  2.7399% 	   994439
+
+Match Rate:      	      NA 	       NA 	 93.3321% 	  4418653953
+Error Rate:      	 31.4361% 	  9479765 	  6.6416% 	   314436109
+Sub Rate:        	 31.0655% 	  9368005 	  1.7887% 	    84680815
+Del Rate:        	  4.3779% 	  1320179 	  3.8214% 	   180920301
+Ins Rate:        	 10.7224% 	  3233416 	  1.0315% 	    48834993
+N Rate:          	  0.1880% 	    56696 	  0.0263% 	     1246564
+
+
+Read 2 data:      	pct reads	num reads 	pct bases	   num bases
+
+mapped:          	 82.6566% 	 29999674 	 82.6566% 	  4529950774
+unambiguous:     	 82.5549% 	 29962789 	 82.5549% 	  4524381139
+ambiguous:       	  0.1016% 	    36885 	  0.1016% 	     5569635
+low-Q discards:  	  0.0007% 	      243 	  0.0007% 	       36693
+
+perfect best site:	 54.4346% 	 19756680 	 54.4346% 	  2983258680
+semiperfect site:	 54.5083% 	 19783459 	 54.5083% 	  2987302309
+rescued:         	  3.3662% 	  1221741
+
+Match Rate:      	      NA 	       NA 	 94.6659% 	  4390392702
+Error Rate:      	 33.9375% 	 10181361 	  5.3027% 	   245926786
+Sub Rate:        	 33.5729% 	 10071967 	  1.9223% 	    89154191
+Del Rate:        	  4.1167% 	  1235026 	  2.3250% 	   107826084
+Ins Rate:        	 10.6316% 	  3189515 	  1.0554% 	    48946511
+N Rate:          	  0.3249% 	    97463 	  0.0314% 	     1457370
