@@ -35,7 +35,8 @@ do
     for type in AAFTF
     do
 	REPORTOUT=${STRAIN}.${type}
-	if [ -s $OUTDIR/${REPORTOUT}.bbmap_covstats.txt ]; then
+	SORTED=$(realpath $ASM/${STRAIN}.${type}.fasta)
+	if [[ -s $OUTDIR/${REPORTOUT}.bbmap_summary.txt && $OUTDIR/${REPORTOUT}.bbmap_summary.txt -nt $SORTED ]]; then
 	    DONETHIS=1
 	else
 	    DONETHIS=0

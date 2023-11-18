@@ -41,4 +41,4 @@ done
 echo 'for file in annotate/*/predict_misc/EVM_busco.b; do rsync -a --delete ./empty/ $file/; rmdir $file; done' >> delete_$$.sh
 RUNSET=$(echo "${TORUN[@]}" | perl -p -e 's/ /,/g')
 
-echo "sbatch --array=$RUNSET pipeline/02_predict_optimize.sh"
+echo "sbatch --array=$RUNSET pipeline/annotation/03_predict.sh"

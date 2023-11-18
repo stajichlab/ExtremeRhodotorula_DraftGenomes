@@ -1,5 +1,5 @@
 #!/usr/bin/bash -l
-#SBATCH -p batch --time 3-0:00:00 --ntasks 32 --nodes 1 --mem 24G --out logs/annotate_predict.%a.log
+#SBATCH --time 3-0:00:00 --ntasks 16 --nodes 1 --mem 24G --out logs/annotate_predict.%a.log
 
 module load funannotate
 
@@ -59,13 +59,22 @@ do
 	    LOCUSTAG=$(echo -n $STRAIN | perl -p -e 's/[\s_\.\-]+//g')
     fi
     echo "LOCUS is $LOCUSTAG MASKED is $MASKED"
-
+    if [[ -f $OUTDIR/${name}/predict_misc/protein_alignments.gff3 && $MASKED -nt $OUTDIR/${name}/predict_misc/protein_alignments.gff3 ]]; then
+	    echo "$MASKED is newer than $OUTDIR/${name}/predict_misc/protein_alignments.gff3, need to remove existing files to ensure clean re-run"
+	    exit
+    fi
+    # we cannot re-rerun if this file is in place
+    rm -rf  $OUTDIR/${name}/predict_misc/CodingQuarry
+    if [[ -f $OUTDIR/${name}/predict_misc/augustus.gff3 && $OUTDIR/${name}/training/funannotate_train.stringtie.gtf -nt $OUTDIR/${name}/predict_misc/augustus.gff3 ]]; then
+	    rm -rf $OUTDIR/${name}/predict_misc/augustus.* $OUTDIR/${name}/predict_misc/snap* $OUTDIR/${name}/predict_misc/EVM \
+		    $OUTDIR/${name}/predict_misc/hints* $OUTDIR/${name}/predict_misc/genemark.* $OUTDIR/${name}/predict_misc/gene_predictions.gff3
+    fi
     time funannotate predict --cpus $CPU --keep_no_stops --SeqCenter $SEQCENTER \
 		--busco_db $BUSCO --optimize_augustus -w codingquarry:0 genemark:0 \
 		--strain $STRAIN --min_training_models 100 \
 		--AUGUSTUS_CONFIG_PATH $AUGUSTUS_CONFIG_PATH \
 		-i $MASKED --name $LOCUSTAG \
 		--protein_evidence $FUNANNOTATE_DB/uniprot_sprot.fasta \
-		-s "$SPECIES" -o $OUTDIR/${name}  --tmpdir $SCRATCH 
+		-s "$SPECIES" -o $OUTDIR/${name}  --tmpdir $SCRATCH
 		#--busco_seed_species $SEED_SPECIES
 done

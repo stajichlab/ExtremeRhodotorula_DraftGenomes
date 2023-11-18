@@ -1,14 +1,5 @@
 Cystobasidium_sp_DVPG_10075
 Cystobasidium_sp_R3
-Rhodotorula_araucariae_NRRL_Y-17376
-Rhodotorula_dairenensis_NRRL_Y-2504
-Rhodotorula_diobovata_NRRL_Y-7196
-Rhodotorula_evergladensis_DBVPG_7922
-Rhodotorula_graminis_NRRL_Y-2474
-Rhodotorula_mucilaginosa_NRRL_Y-2510
-Rhodotorula_paludigena_NRRL_Y-12923
-Rhodotorula_sp_DBVPG_7947
-Rhodotorula_sphaerocarpa_NRRL_Y-7192
 Rhodotorula_alborubescens_EXF_12768
 Rhodotorula_alborubescens_TFCN_17-0-2E390-1
 Rhodotorula_alborubescens_TFCN_17-0-2E390-2
@@ -18,12 +9,14 @@ Rhodotorula_alborubescens_TFCN_17-390M-1
 Rhodotorula_alborubescens_TFCN_17Y-278-1
 Rhodotorula_alborubescens_TFCN_25-0-2E390-1
 Rhodotorula_alborubescens_TFCN_25-395P-1
+Rhodotorula_araucariae_NRRL_Y-17376
 Rhodotorula_babjevae_DBVPG_8058
 Rhodotorula_dairenensis_DBVPG_3768
 Rhodotorula_dairenensis_DBVPG_3770
 Rhodotorula_dairenensis_DBVPG_3771
 Rhodotorula_dairenensis_DBVPG_3773
 Rhodotorula_dairenensis_DBVPG_3853
+Rhodotorula_dairenensis_NRRL_Y-2504
 Rhodotorula_dairenensis_TFCN_7W-292-3
 Rhodotorula_diobovata_DBVPG_6195
 Rhodotorula_diobovata_DBVPG_6202
@@ -31,11 +24,13 @@ Rhodotorula_diobovata_EXF_13298
 Rhodotorula_diobovata_EXF_3438
 Rhodotorula_diobovata_EXF_3546
 Rhodotorula_diobovata_EXF_4236
+Rhodotorula_diobovata_NRRL_Y-7196
 Rhodotorula_diobovata_TFCN_17-331Y-3
 Rhodotorula_diobovata_TFCN_211A-3
 Rhodotorula_diobovata_TFCN_212C-2
 Rhodotorula_diobovata_TFCN_7-9-2
 Rhodotorula_diobovata_TFCN_7-9-3
+Rhodotorula_evergladensis_DBVPG_7922
 Rhodotorula_glutinis_DBVPG_3769
 Rhodotorula_glutinis_DBVPG_3772
 Rhodotorula_glutinis_DBVPG_4530
@@ -47,6 +42,7 @@ Rhodotorula_graminis_DBVPG_6083
 Rhodotorula_graminis_DBVPG_7021
 Rhodotorula_graminis_EXF_13753
 Rhodotorula_graminis_EXF_14539
+Rhodotorula_graminis_NRRL_Y-2474
 Rhodotorula_graminis_TFCN_17-328C-3
 Rhodotorula_graminis_TFCN_17-328P-3
 Rhodotorula_graminis_TFCN_17-334Y-6
@@ -338,6 +334,7 @@ Rhodotorula_mucilaginosa_IIF8SW-B3
 Rhodotorula_mucilaginosa_IIF8SW-F1
 Rhodotorula_mucilaginosa_IIFCSW-F1
 Rhodotorula_mucilaginosa_JGTA-S1
+Rhodotorula_mucilaginosa_NRRL_Y-2510
 Rhodotorula_mucilaginosa_rhodo3571
 Rhodotorula_mucilaginosa_RIT389
 Rhodotorula_mucilaginosa_SB-353
@@ -387,11 +384,11 @@ Rhodotorula_mucilaginosa_TFCN_17-337P-5
 Rhodotorula_mucilaginosa_TFCN_181A-1
 Rhodotorula_mucilaginosa_TFCN_186DK3-2
 Rhodotorula_mucilaginosa_TFCN_1A-14
+Rhodotorula_mucilaginosa_TFCN_209-6-1
 Rhodotorula_mucilaginosa_TFCN_209-6-11
 Rhodotorula_mucilaginosa_TFCN_209-6-12
 Rhodotorula_mucilaginosa_TFCN_209-6-14
 Rhodotorula_mucilaginosa_TFCN_209-6-17
-Rhodotorula_mucilaginosa_TFCN_209-6-1
 Rhodotorula_mucilaginosa_TFCN_209-6-2
 Rhodotorula_mucilaginosa_TFCN_209-6-4
 Rhodotorula_mucilaginosa_TFCN_209-6-5
@@ -447,6 +444,7 @@ Rhodotorula_pacifica_TFCN_1B-1-2
 Rhodotorula_paludigena_DBVPG_4610
 Rhodotorula_paludigena_DBVPG_7316
 Rhodotorula_paludigena_DBVPG_7323
+Rhodotorula_paludigena_NRRL_Y-12923
 Rhodotorula_paludigena_TFCN_1A-1-2
 Rhodotorula_paludigena_TFCN_342-2
 Rhodotorula_paludigena_TFCN_342-3
@@ -463,6 +461,7 @@ Rhodotorula_paludigenum_TFCN_48D-4
 Rhodotorula_sp_CCFEE_5036
 Rhodotorula_sp_DBVPG_10075
 Rhodotorula_sp_DBVPG_6740
+Rhodotorula_sp_DBVPG_7947
 Rhodotorula_sp_EXF_13255
 Rhodotorula_sp_EXF_2251
 Rhodotorula_sp_EXF_3464
@@ -473,6 +472,7 @@ Rhodotorula_sp_EXF_4885
 Rhodotorula_sp_EXF_7045
 Rhodotorula_sp_EXF_9756
 Rhodotorula_sphaerocarpa_EXF_4886
+Rhodotorula_sphaerocarpa_NRRL_Y-7192
 Rhodotorula_sphaerocarpa_TFCN_152A-12
 Rhodotorula_sphaerocarpa_TFCN_152A-2
 Rhodotorula_sphaerocarpa_TFCN_213-6-2

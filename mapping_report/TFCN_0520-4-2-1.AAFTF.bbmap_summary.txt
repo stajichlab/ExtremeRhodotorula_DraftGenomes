@@ -1,50 +1,50 @@
 Reads Used:           	9011502	(1351725300 bases)
 
-Mapping:          	211.178 seconds.
-Reads/sec:       	42672.64
-kBases/sec:      	6400.90
+Mapping:          	137.682 seconds.
+Reads/sec:       	65451.64
+kBases/sec:      	9817.75
 
 
 Pairing data:   	pct pairs	num pairs 	pct bases	   num bases
 
-mated pairs:     	 91.9938% 	  4145011 	 91.9938% 	  1243503300
+mated pairs:     	 91.9939% 	  4145017 	 91.9939% 	  1243505100
 bad pairs:       	  4.1579% 	   187344 	  4.1579% 	    56203200
 insert size avg: 	  584.30
 
 
 Read 1 data:      	pct reads	num reads 	pct bases	   num bases
 
-mapped:          	 98.9674% 	  4459223 	 98.9674% 	   668883450
-unambiguous:     	 98.9310% 	  4457583 	 98.9310% 	   668637450
-ambiguous:       	  0.0364% 	     1640 	  0.0364% 	      246000
+mapped:          	 98.9673% 	  4459222 	 98.9673% 	   668883300
+unambiguous:     	 98.9309% 	  4457581 	 98.9309% 	   668637150
+ambiguous:       	  0.0364% 	     1641 	  0.0364% 	      246150
 low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
 
-perfect best site:	 85.4474% 	  3850049 	 85.4474% 	   577507350
+perfect best site:	 85.4475% 	  3850050 	 85.4475% 	   577507500
 semiperfect site:	 85.4869% 	  3851826 	 85.4869% 	   577773900
-rescued:         	  0.9091% 	    40960
+rescued:         	  0.9090% 	    40958
 
-Match Rate:      	      NA 	       NA 	 97.7180% 	   665465212
-Error Rate:      	 13.5399% 	   603776 	  2.2762% 	    15501178
-Sub Rate:        	 13.3375% 	   594751 	  0.3895% 	     2652419
-Del Rate:        	  1.0946% 	    48809 	  1.7801% 	    12122351
-Ins Rate:        	  1.5546% 	    69325 	  0.1067% 	      726408
+Match Rate:      	      NA 	       NA 	 97.7187% 	   665465082
+Error Rate:      	 13.5399% 	   603774 	  2.2755% 	    15496353
+Sub Rate:        	 13.3375% 	   594750 	  0.3895% 	     2652392
+Del Rate:        	  1.0945% 	    48807 	  1.7794% 	    12117546
+Ins Rate:        	  1.5546% 	    69324 	  0.1067% 	      726415
 N Rate:          	  0.1410% 	     6289 	  0.0058% 	       39411
 
 
 Read 2 data:      	pct reads	num reads 	pct bases	   num bases
 
-mapped:          	 96.5861% 	  4351929 	 96.5861% 	   652789350
-unambiguous:     	 96.5508% 	  4350338 	 96.5508% 	   652550700
-ambiguous:       	  0.0353% 	     1591 	  0.0353% 	      238650
+mapped:          	 96.5863% 	  4351936 	 96.5863% 	   652790400
+unambiguous:     	 96.5510% 	  4350346 	 96.5510% 	   652551900
+ambiguous:       	  0.0353% 	     1590 	  0.0353% 	      238500
 low-Q discards:  	  0.0001% 	        6 	  0.0001% 	         900
 
-perfect best site:	 62.0611% 	  2796319 	 62.0611% 	   419447850
+perfect best site:	 62.0611% 	  2796320 	 62.0611% 	   419448000
 semiperfect site:	 62.0896% 	  2797602 	 62.0896% 	   419640300
-rescued:         	  1.1281% 	    50829
+rescued:         	  1.1283% 	    50839
 
-Match Rate:      	      NA 	       NA 	 96.3710% 	   643632727
-Error Rate:      	 35.7058% 	  1553891 	  3.6236% 	    24201119
-Sub Rate:        	 35.4518% 	  1542837 	  1.2536% 	     8372658
-Del Rate:        	  1.3129% 	    57135 	  2.2580% 	    15080477
-Ins Rate:        	  1.6847% 	    73317 	  0.1120% 	      747984
+Match Rate:      	      NA 	       NA 	 96.3719% 	   643633552
+Error Rate:      	 35.7058% 	  1553897 	  3.6227% 	    24194858
+Sub Rate:        	 35.4518% 	  1542843 	  1.2537% 	     8372784
+Del Rate:        	  1.3129% 	    57135 	  2.2570% 	    15073991
+Ins Rate:        	  1.6848% 	    73320 	  0.1120% 	      748083
 N Rate:          	  0.0648% 	     2819 	  0.0054% 	       35981

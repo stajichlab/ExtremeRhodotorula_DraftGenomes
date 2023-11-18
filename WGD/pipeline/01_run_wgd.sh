@@ -34,8 +34,7 @@ if [ ! -s $FAMILIES ]; then
 fi
 if [ ! -s $KS ]; then
 	echo "cds=$CDS fam=$FAMILIES"
-	mkdir -p temp_$NAME
-	wgd ksd $FAMILIES $CDS -t $SCRATCH -n $CPU --strip_gaps --to_stop 
+	wgd ksd $FAMILIES $CDS -t $SCRATCH -n $CPU --strip_gaps --to_stop
 fi
 mkdir -p wgd_syn/${NAME}
 wgd syn -f mRNA -a ID $FAMILIES $GFF3 -ks $KS --outdir wgd_syn/${NAME} --minlen 100000

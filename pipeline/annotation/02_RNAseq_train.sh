@@ -38,7 +38,11 @@ do
     if [[ "$NOTES" == "Too Low" ]]; then
 	    echo "skipping $N ($ID) as it is too low coverage ($NOTES)"
 	    continue
+    elif [[ "$NOTES" == "No RNA" ]]; then
+	    echo "skipping $N ($ID) as no good RNA matches ($NOTES)"
+	    continue
     fi
+
     echo "$ID $BASE $SRA $SPECIES $STRAIN"
     SPECIESSTRAINNOSPACE=$(echo -n "$SPECIES $STRAIN" | perl -p -e 's/[\(\)\s]+/_/g')
     SPECIESNOSPACE=$(echo -n "$SPECIES" | perl -p -e 's/[\(\)\s]+/_/g')
@@ -80,7 +84,6 @@ do
     fi
     if [ -f $ODIR/${name}/training/funannotate_train.pasa.gff3 ]; then
 	    echo "transcript alignments already generated for $name ($ODIR/${name}/training/trinity.alignments.gff3) ... skipping"
-        exit
     fi
     echo "using $RNAFOLDER/${SPECIESNOSPACE}_R1.fastq.gz and $RNAFOLDER/${SPECIESNOSPACE}_R2.fastq.gz as input RNAseq"
     

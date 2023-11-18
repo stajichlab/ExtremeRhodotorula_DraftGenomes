@@ -1,6 +1,5 @@
 #!/bin/bash -l
 #SBATCH -p short -c 8 -n 1 --nodes 1 --mem 48G --out logs/annotate_mask.%a.log
-
 module unload miniconda3
 
 CPU=1
@@ -51,9 +50,10 @@ do
 	    mkdir -p $MASKDIR/${name}
 	    GENOME=$(realpath $INDIR/${name}.fasta)
 	    LIBRARY=$RMLIBFOLDER/$SPECIESNOSPACE.repeatmodeler.lib
-	    if [[ ! -f $LIBRARY || $INDIR/${name}.fasta -nt $OUTNAME ]]; then
+	    if [[ ! -f $LIBRARY || $INDIR/${name}.fasta -nt $LIBRARY ]]; then
 		module load RepeatModeler
 		pushd $MASKDIR/${name}
+		rm -rf RM_*
 		BuildDatabase -name $STRAIN $GENOME
 		RepeatModeler -threads $CPU -database $STRAIN -LTRStruct
 		rsync -a RM_*/consensi.fa.classified $LIBRARY

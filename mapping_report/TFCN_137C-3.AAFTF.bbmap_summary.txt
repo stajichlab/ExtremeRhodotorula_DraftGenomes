@@ -1,50 +1,50 @@
 Reads Used:           	4998538	(749780700 bases)
 
-Mapping:          	65.004 seconds.
-Reads/sec:       	76896.39
-kBases/sec:      	11534.46
+Mapping:          	58.785 seconds.
+Reads/sec:       	85031.10
+kBases/sec:      	12754.67
 
 
 Pairing data:   	pct pairs	num pairs 	pct bases	   num bases
 
-mated pairs:     	 82.8423% 	  2070452 	 82.8423% 	   621135600
+mated pairs:     	 82.8425% 	  2070456 	 82.8425% 	   621136800
 bad pairs:       	  1.0703% 	    26750 	  1.0703% 	     8025000
 insert size avg: 	  501.74
 
 
 Read 1 data:      	pct reads	num reads 	pct bases	   num bases
 
-mapped:          	 85.2582% 	  2130831 	 85.2582% 	   319624650
-unambiguous:     	 85.1529% 	  2128199 	 85.1529% 	   319229850
-ambiguous:       	  0.1053% 	     2632 	  0.1053% 	      394800
+mapped:          	 85.2582% 	  2130832 	 85.2582% 	   319624800
+unambiguous:     	 85.1529% 	  2128201 	 85.1529% 	   319230150
+ambiguous:       	  0.1053% 	     2631 	  0.1053% 	      394650
 low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
 
 perfect best site:	 72.5158% 	  1812365 	 72.5158% 	   271854750
 semiperfect site:	 72.7023% 	  1817026 	 72.7023% 	   272553900
-rescued:         	  0.5821% 	    14547
+rescued:         	  0.5820% 	    14546
 
-Match Rate:      	      NA 	       NA 	 98.6647% 	   318020894
-Error Rate:      	 14.7209% 	   313678 	  1.2922% 	     4165071
-Sub Rate:        	 14.5681% 	   310422 	  0.3704% 	     1194008
-Del Rate:        	  0.5602% 	    11937 	  0.8378% 	     2700334
-Ins Rate:        	  1.0492% 	    22357 	  0.0840% 	      270729
+Match Rate:      	      NA 	       NA 	 98.6647% 	   318021027
+Error Rate:      	 14.7210% 	   313679 	  1.2922% 	     4165132
+Sub Rate:        	 14.5682% 	   310423 	  0.3704% 	     1194026
+Del Rate:        	  0.5603% 	    11938 	  0.8378% 	     2700378
+Ins Rate:        	  1.0492% 	    22356 	  0.0840% 	      270728
 N Rate:          	  0.3007% 	     6407 	  0.0431% 	      139019
 
 
 Read 2 data:      	pct reads	num reads 	pct bases	   num bases
 
-mapped:          	 84.2538% 	  2105729 	 84.2538% 	   315859350
-unambiguous:     	 84.1499% 	  2103133 	 84.1499% 	   315469950
-ambiguous:       	  0.1039% 	     2596 	  0.1039% 	      389400
+mapped:          	 84.2539% 	  2105731 	 84.2539% 	   315859650
+unambiguous:     	 84.1498% 	  2103131 	 84.1498% 	   315469650
+ambiguous:       	  0.1040% 	     2600 	  0.1040% 	      390000
 low-Q discards:  	  0.0000% 	        0 	  0.0000% 	           0
 
 perfect best site:	 60.1523% 	  1503368 	 60.1523% 	   225505200
 semiperfect site:	 60.3117% 	  1507352 	 60.3117% 	   226102800
-rescued:         	  0.7352% 	    18375
+rescued:         	  0.7353% 	    18377
 
-Match Rate:      	      NA 	       NA 	 97.5380% 	   312525724
-Error Rate:      	 28.3962% 	   597948 	  2.4210% 	     7757233
-Sub Rate:        	 28.2459% 	   594783 	  0.9140% 	     2928740
-Del Rate:        	  0.6532% 	    13754 	  1.4216% 	     4555128
-Ins Rate:        	  1.0796% 	    22734 	  0.0853% 	      273365
-N Rate:          	  0.3122% 	     6574 	  0.0410% 	      131521
+Match Rate:      	      NA 	       NA 	 97.5378% 	   312526008
+Error Rate:      	 28.3964% 	   597952 	  2.4212% 	     7757813
+Sub Rate:        	 28.2461% 	   594787 	  0.9141% 	     2928790
+Del Rate:        	  0.6532% 	    13755 	  1.4218% 	     4555620
+Ins Rate:        	  1.0797% 	    22736 	  0.0853% 	      273403
+N Rate:          	  0.3121% 	     6572 	  0.0410% 	      131449
